@@ -1,16 +1,13 @@
 .header {
   display: flex;
-  justify-content: space-around;
-  padding: 8px 0;
-  margin-bottom: 16px;
-  border-bottom: 1px solid black;
-}
-.wrapper {
-  display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 90%;
+  gap: 12px;
+  padding: 8px 0;
+  margin: auto 30px 16px 30px;
+  border-bottom: 1px solid black;
 }
+
 .headerTittle {
   color: palevioletred;
 }

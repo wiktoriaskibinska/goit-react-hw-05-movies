@@ -3,6 +3,7 @@ import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { searchMovieById } from 'API/TmbdApi';
 import Loader from 'components/Loader/Loader';
+import css from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -39,27 +40,23 @@ const MovieDetails = () => {
   } = movieInfo || {};
 
   return (
-    <section
-      style={{
-        marginTop: 20,
-      }}
-    >
-      <button>
-        <Link to={backLinkHref}>Go back</Link>
-      </button>
+    <section className={css.movieSection}>
+      <Link to={backLinkHref} className={css.bttnLink}>
+        <button className={css.goBackBttn}>Go back</button>
+      </Link>
+
       {loading && <Loader />}
+      <section className={css.movieMain}>
+        <img
+          width="300px"
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/w500${poster_path}`
+              : `https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg`
+          }
+          alt={original_title}
+        />
 
-      <img
-        width="300px"
-        src={
-          poster_path
-            ? `https://image.tmdb.org/t/p/w500${poster_path}`
-            : `https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg`
-        }
-        alt={original_title}
-      />
-
-      <section>
         <section>
           <h1>
             {title} ({release_date})
@@ -74,18 +71,19 @@ const MovieDetails = () => {
             ))}
           </ul>
         </section>
-        <section>
-          <h3>Additional info</h3>
-          <ul>
-            <li>
-              <Link to="cast">Cast</Link>
-            </li>
-            <li>
-              <Link to="reviews">Reviews</Link>
-            </li>
-          </ul>
-        </section>
       </section>
+      <section>
+        <h3>Additional info</h3>
+        <ul className={css.infoLinks}>
+          <li>
+            <Link to="cast">Cast</Link>
+          </li>
+          <li>
+            <Link to="reviews">Reviews</Link>
+          </li>
+        </ul>
+      </section>
+
       <Outlet />
     </section>
   );

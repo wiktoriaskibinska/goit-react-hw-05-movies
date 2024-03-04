@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { searchQueryFilm } from 'API/TmbdApi';
 import FilmsList from 'components/FilmsList/FilmsList';
 import Loader from 'components/Loader/Loader';
+import css from './Movies.module.css';
 
 const Movies = () => {
   const [query, setQuery] = useState('');
@@ -37,7 +38,7 @@ const Movies = () => {
   }, []);
 
   return (
-    <section>
+    <section className={css.moviesSection}>
       <h1>Search for a movie!</h1>
       <SearchForm
         searchMovies={searchMovies}

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchActors } from 'API/TmbdApi';
 import Loader from 'components/Loader/Loader';
+import css from './Cast.module.css';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -31,12 +32,12 @@ const Cast = () => {
     <div>
       {loading && <Loader />}
 
-      <ul>
+      <ul className={css.castList}>
         {castInfo.map(
           ({ id, profile_path, original_name, name, character }) => (
             <li key={id}>
               <img
-                width="200px"
+                width="220px"
                 src={
                   profile_path
                     ? `https://image.tmdb.org/t/p/w500${profile_path}`

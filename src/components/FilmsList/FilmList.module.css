@@ -1,0 +1,13 @@
+.filmsList {
+  margin-top: 30px;
+}
+.filmItem {
+  color: black;
+  font-weight: 500;
+}
+.filmItem:hover {
+  color: palevioletred;
+}
+.filmItem:visited {
+  color: palevioletred;
+}

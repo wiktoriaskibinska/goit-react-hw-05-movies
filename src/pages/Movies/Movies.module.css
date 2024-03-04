@@ -1,6 +1,7 @@
-.trendingList {
+.moviesSection {
   margin: 20px 30px 20px 30px;
 }
-.trendingList > h1 {
+
+.moviesSection > h1 {
   color: palevioletred;
 }

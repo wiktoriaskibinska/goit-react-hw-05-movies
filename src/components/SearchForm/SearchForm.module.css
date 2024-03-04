@@ -1,0 +1,41 @@
+.searchForm {
+  box-shadow: 0 10px 40px pink, 0 0 0 10px rgb(255, 255, 255);
+  width: fit-content;
+  border-radius: 35px;
+}
+.searchWrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: pink;
+  border: none;
+  padding: 15px;
+  border-radius: 20px;
+  width: 300px;
+}
+
+.searchInput {
+  border: none;
+  background-color: pink;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.searchInput:focus-visible {
+  outline: none;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px pink inset;
+}
+.searchWrapper > button {
+  border-radius: 4px;
+
+  text-decoration: none;
+  color: white;
+  background-color: pink;
+  font-weight: 700;
+  border: none;
+  font-size: medium;
+}
+.searchWrapper > button:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,37 @@
+.movieSection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 20px 30px 20px 30px;
+}
+.movieMain {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 20px;
+}
+.bttnLink {
+  width: fit-content;
+}
+.goBackBttn:hover {
+  cursor: pointer;
+}
+.goBackBttn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  background-color: pink;
+  font-weight: 700;
+  width: 100px;
+  height: 40px;
+  border: none;
+}
+
+.infoLinks > li > a {
+  font-weight: 700;
+  color: black;
+}
+.infoLinks > li > a:hover {
+  color: palevioletred;
+}
