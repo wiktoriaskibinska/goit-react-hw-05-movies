@@ -1,20 +1,15 @@
 import React from 'react';
-import { useState } from 'react';
 
-const SearchForm = ({ searchMovies }) => {
-  const [query, setQuery] = useState('');
-
+const SearchForm = ({ searchMovies, query, setQuery }) => {
   const handleSubmit = evt => {
     evt.preventDefault();
     searchMovies(query.toLowerCase());
   };
-
   const handleInputChange = evt => {
     evt.preventDefault();
     const value = evt.target.value;
     setQuery(value);
   };
-
   return (
     <form onSubmit={handleSubmit}>
       <input

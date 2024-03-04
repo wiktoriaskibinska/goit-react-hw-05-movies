@@ -3,7 +3,7 @@ import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { searchMovieById } from 'API/TmbdApi';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieInfo, setMovieInfo] = useState({});
   const [loading, setLoading] = useState(false);
@@ -90,3 +90,5 @@ export const MovieDetails = () => {
     </div>
   );
 };
+
+export default MovieDetails;

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchActors } from 'API/TmbdApi';
 
-export const Cast = () => {
+const Cast = () => {
   const { movieId } = useParams();
   const [castInfo, setCastInfo] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -51,3 +51,5 @@ export const Cast = () => {
     </div>
   );
 };
+
+export default Cast;

@@ -3,7 +3,7 @@ import { fetchTrending } from 'API/TmbdApi';
 import { useEffect, useState } from 'react';
 import FilmsList from 'components/FilmsList/FilmsList';
 
-export const Home = () => {
+const Home = () => {
   const [films, setFilms] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -32,3 +32,4 @@ export const Home = () => {
     </div>
   );
 };
+export default Home;
