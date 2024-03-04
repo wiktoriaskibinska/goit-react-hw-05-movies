@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchReviews } from 'API/TmbdApi';
+import Loader from 'components/Loader/Loader';
 
 const Reviews = () => {
   const { movieId } = useParams();
@@ -28,6 +29,7 @@ const Reviews = () => {
   }, [movieId]);
   return (
     <>
+      {loading && <Loader />}
       {reviews.length > 0 && (
         <div>
           <ul>

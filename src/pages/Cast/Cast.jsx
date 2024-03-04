@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchActors } from 'API/TmbdApi';
+import Loader from 'components/Loader/Loader';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -28,7 +29,8 @@ const Cast = () => {
 
   return (
     <div>
-      Cast
+      {loading && <Loader />}
+
       <ul>
         {castInfo.map(
           ({ id, profile_path, original_name, name, character }) => (

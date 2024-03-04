@@ -2,6 +2,7 @@ import SearchForm from 'components/SearchForm/SearchForm';
 import React, { useEffect, useState } from 'react';
 import { searchQueryFilm } from 'API/TmbdApi';
 import FilmsList from 'components/FilmsList/FilmsList';
+import Loader from 'components/Loader/Loader';
 
 const Movies = () => {
   const [query, setQuery] = useState('');
@@ -36,15 +37,20 @@ const Movies = () => {
   }, []);
 
   return (
-    <div>
+    <section>
+      <h1>Search for a movie!</h1>
       <SearchForm
         searchMovies={searchMovies}
         query={query}
         setQuery={setQuery}
       />
-      {loading && <p>loading...</p>}
-      <FilmsList films={searchFilms} />
-    </div>
+      {loading && <Loader />}
+      {searchFilms.length > 0 ? (
+        <FilmsList films={searchFilms} />
+      ) : (
+        <p>Sorry, no movies found. </p>
+      )}
+    </section>
   );
 };
 export default Movies;
