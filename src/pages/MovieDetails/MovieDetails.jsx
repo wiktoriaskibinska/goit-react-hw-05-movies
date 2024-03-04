@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { searchMovieById } from 'API/TmbdApi';
 
@@ -7,6 +7,8 @@ export const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieInfo, setMovieInfo] = useState({});
   const [loading, setLoading] = useState(false);
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     setLoading(true);
@@ -37,16 +39,26 @@ export const MovieDetails = () => {
 
   console.log(movieInfo);
   return (
-    <div>
-      <img
-        width="300px"
-        src={
-          poster_path
-            ? `https://image.tmdb.org/t/p/w500${poster_path}`
-            : `https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg`
-        }
-        alt={original_title}
-      />
+    <div
+      style={{
+        marginTop: 20,
+      }}
+    >
+      <div>
+        <button>
+          <Link to={backLinkHref}>Go back</Link>
+        </button>
+
+        <img
+          width="300px"
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/w500${poster_path}`
+              : `https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg`
+          }
+          alt={original_title}
+        />
+      </div>
       <div>
         <div>
           <h1>
