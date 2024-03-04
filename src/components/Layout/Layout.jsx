@@ -8,8 +8,8 @@ export const Layout = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/movies">Movies</NavLink>
         <NavLink to="/movies/movieId">MovieDetails</NavLink>
-        <Outlet />
       </nav>
+      <Outlet />
     </div>
   );
 };

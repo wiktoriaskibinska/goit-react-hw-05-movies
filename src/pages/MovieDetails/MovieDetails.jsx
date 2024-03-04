@@ -62,10 +62,17 @@ export const MovieDetails = () => {
             ))}
           </ul>
         </div>
-
-        <h3>Additional info</h3>
-        <Link to="cast">Cast</Link>
-        <Link to="reviews">Reviews</Link>
+        <div>
+          <h3>Additional info</h3>
+          <ul>
+            <li>
+              <Link to="cast">Cast</Link>
+            </li>
+            <li>
+              <Link to="reviews">Reviews</Link>
+            </li>
+          </ul>
+        </div>
       </div>
       <Outlet />
     </div>
