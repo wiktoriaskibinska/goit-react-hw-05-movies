@@ -26,7 +26,6 @@ const Cast = () => {
 
     fetchCast();
   }, [movieId]);
-  console.log(castInfo);
 
   return (
     <div>
