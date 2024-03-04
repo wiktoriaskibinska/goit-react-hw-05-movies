@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import css from './FilmList.module.css';
+import PropTypes from 'prop-types';
 
 const FilmsList = ({ films }) => {
   const location = useLocation();
@@ -20,6 +21,9 @@ const FilmsList = ({ films }) => {
       ))}
     </ul>
   );
+};
+FilmsList.propTypes = {
+  films: PropTypes.array,
 };
 
 export default FilmsList;

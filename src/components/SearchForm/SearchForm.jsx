@@ -1,5 +1,6 @@
 import React from 'react';
 import css from './SearchForm.module.css';
+import PropTypes from 'prop-types';
 
 const SearchForm = ({ searchMovies, query, setQuery }) => {
   const handleSubmit = evt => {
@@ -29,4 +30,9 @@ const SearchForm = ({ searchMovies, query, setQuery }) => {
   );
 };
 
+SearchForm.propTypes = {
+  searchMovies: PropTypes.func,
+  query: PropTypes.string,
+  setQuery: PropTypes.func,
+};
 export default SearchForm;
